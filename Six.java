@@ -22,7 +22,7 @@ public class Six {
         return sum * sum;
     }
 
-    private static long difference() {
+    private static int difference() {
         return squareOfSum() - sumOfSquares();
     }
 }
