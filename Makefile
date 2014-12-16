@@ -1,10 +1,7 @@
-SRCS := $(wildcard *.java)
+SRCS := $(wildcard *.java) $(wildcard misc/*.java)
 
-default: sentinel
-
-clean:
-	$(RM) *.class
-
-sentinel: $(SRCS)
+default:
 	javac $(SRCS)
 
+clean:
+	$(RM) *.class misc/*.class
