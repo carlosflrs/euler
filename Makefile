@@ -7,3 +7,4 @@ clean:
 
 sentinel: $(SRCS)
 	javac $(SRCS)
+
