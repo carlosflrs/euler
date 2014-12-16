@@ -26,9 +26,9 @@ public class Ten {
         }
     }
 
-    private static int sumOfPrimes() {
+    private static long sumOfPrimes() {
         int i;
-        int sum = 0;
+        long sum = 0;
         for (i = 2; i < 2000000; i = i + 1) {
             if (isPrime(i)) {
                 sum = sum + i;
