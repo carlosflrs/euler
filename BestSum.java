@@ -23,7 +23,7 @@ public class BestSum {
         System.out.println(bestSum(V));
     }
 
-    static int bestSum(int[] V) {
+    private static int bestSum(int[] V) {
         int total = 0;
         int i;
         for (i = 0;  i < V.length; i = i + 1) {
@@ -32,7 +32,7 @@ public class BestSum {
         return bestSum(V, 0, V.length - 1, total);
     }
 
-    static int bestSum(int[] V, int low, int high, int total) {
+    private static int bestSum(int[] V, int low, int high, int total) {
         if (low > high) {
             return 0;
         }

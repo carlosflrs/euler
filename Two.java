@@ -4,6 +4,10 @@
  * */
 public class Two {
 
+    public static void main(String[] args) {
+        System.out.println(sumEvenFibs());
+    }
+
     private static int fibonacci(int n) {
         if (n < 2) {
             return n;
@@ -11,7 +15,7 @@ public class Two {
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
-    public static void main(String[] args) {
+    private static int sumEvenFibs() {
         int sum = 0;
         int i = 1;
         int fib = 0;
@@ -22,6 +26,6 @@ public class Two {
             i = i + 1;
             fib = fibonacci(i);
         }
-        System.out.println(sum);
+        return sum;
     }
 }

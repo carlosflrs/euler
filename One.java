@@ -4,7 +4,11 @@
 
 public class One {
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
+        System.out.println(findMultiples());
+    }
+
+    private static int findMultiples() {
         int i;
         int sum;
         sum = 0;
@@ -13,7 +17,7 @@ public class One {
                 sum = sum + i;
             }
         }
-        System.out.println(sum);
+        return sum;
     }
-    
+
 }
