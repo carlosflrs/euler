@@ -2,8 +2,9 @@ package utils;
 
 import java.util.ArrayList;
 
-/** Calculates if a number is a prime.
- */
+/** Misc prime numbers operations.
+ * @author Carlos A. Flores-Arellano.
+ * */
 public class Primes {
 
     public static boolean isPrime (int x) {
