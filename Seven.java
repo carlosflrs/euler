@@ -10,7 +10,19 @@ public class Seven {
     }
 
     private static int findPrime(int x) {
-        return 1;
+       int i;
+       int j;
+       i = 0;
+       j = 1;
+       int xThPrime = 0;
+       while (j <= x) {
+           if (Primes.isPrime(i)) {
+               xThPrime = i;
+               j = j + 1;
+           }
+           i = i + 1;
+       }
+       return xThPrime;
     }
     
 }
