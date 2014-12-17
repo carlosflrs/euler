@@ -1,5 +1,7 @@
 package utils;
 
+import java.util.ArrayList;
+
 /** Calculates if a number is a prime.
  */
 public class Primes {
@@ -22,4 +24,18 @@ public class Primes {
             return isDivisible(x, k+1, lim);
         }
     }
+
+    public static ArrayList<Integer> primeFactors(int x) {
+        ArrayList<Integer> primes = new ArrayList<>();
+        int i;
+        for (i = 2; i <= x; i = i + 1) {
+            if (isPrime(i) && x % i == 0) {
+                primes.add(i);
+                x = x / i;
+                i = i - 1;
+            }
+        }
+        return primes;
+    }
+
 }
