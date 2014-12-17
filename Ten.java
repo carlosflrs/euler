@@ -1,36 +1,19 @@
-/** Finds the sum of all the primes below two million.
+import utils.Primes;
+
+/** Finds the sum of all the primes below ARGS[0].
  * @author Carlos A. Flores-Arellano.
  * */
 public class Ten {
 
     public static void main(String[] args) {
-        System.out.println(sumOfPrimes());
+        System.out.println(sumOfPrimes(Integer.parseInt(args[0])));
     }
     
-    private static boolean isPrime(int x) {
-        int limit = (int) (Math.round(Math.sqrt(x) + 1.0));
-        if (x <= 1) {
-            return false;
-        } else {
-            return !isDivisible(x, 2, limit);
-        }
-    }
-
-    private static boolean isDivisible(int x, int k, int lim) {
-        if (k >= lim) {
-            return false;
-        } else if (x % k == 0) {
-            return true;
-        } else {
-            return isDivisible(x, k + 1, lim);
-        }
-    }
-
-    private static long sumOfPrimes() {
+    private static long sumOfPrimes(int p) {
         int i;
         long sum = 0;
-        for (i = 2; i < 2000000; i = i + 1) {
-            if (isPrime(i)) {
+        for (i = 2; i < p; i = i + 1) {
+            if (Primes.isPrime(i)) {
                 sum = sum + i;
             }
         }

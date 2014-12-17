@@ -1,7 +1,7 @@
-SRCS := $(wildcard *.java) $(wildcard misc/*.java)
+SRCS := $(wildcard utils/*.java) $(wildcard *.java) 
 
 default:
 	javac $(SRCS)
 
 clean:
-	$(RM) *.class misc/*.class
+	$(RM) *.class utils/*.class
