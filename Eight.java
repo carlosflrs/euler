@@ -1,4 +1,4 @@
-/** Find the ARGS[0] adjecent digits in the 1000-digit number that have
+/** Finds the ARGS[0] adjecent digits in the 1000-digit number that have
  * the greatest product. Largest consecutive digit number without a 0 in it
  * is 62, therefore anything above 62 returns 0.
  * @author Carlos A. Flores-Arellano.
