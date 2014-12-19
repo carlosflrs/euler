@@ -1,6 +1,9 @@
 import utils.Primes;
 
-/** Finds the smalles positive number that is evenly divisible by all
+import java.util.ArrayList;
+import java.util.Hashtable;
+
+/** Finds the smallest positive number that is evenly divisible by all
  * of the numbers from 1 to ARGS[0].
  * @author Carlso A. Flores-Arellano.
  * */
@@ -10,23 +13,48 @@ public class Five {
         System.out.println(findSmallest(Integer.parseInt(args[0])));
     }
 
-    private static int findSmallest(int x) {
+    private static long findSmallest(int n) {
+        int[] freq = highestFrequencies(n);
         int i;
-        i = 1;
-        while (!evenlyDivisible(i, x)) {
-            i = i + 1;
-        }
-        return i;
-    }
-
-    private static boolean evenlyDivisible(int n, int bound) {
-        int i;
-        int ceiling = (int) Math.sqrt(n);
-        for (i = 2; i <= bound; i = i + 1) {
-            if (n % i != 0 || i >= ceiling) {
-                return false;
+        long total = 1;
+        for (i = 1; i < freq.length; i = i + 1) {
+            if (freq[i] != 0) {
+                total = total * ((long) Math.pow(i, freq[i]));
             }
         }
-        return true;
+        return total;
     }
+
+    private static int[] highestFrequencies(int n) {
+        int[] frequencies = new int[n + 1];
+        int[] prime = new int[2];
+        int i = 1;
+        for (i = 1; i <= n; i = i + 1) {
+            prime = highestFactor(i);
+            if (frequencies[prime[0]] < prime[1]) {
+                frequencies[prime[0]] = prime[1];
+            }
+        }
+        return frequencies;
+    }
+
+    private static int[] highestFactor(int n) {
+        ArrayList<Integer> factors = Primes.primeFactors(n);
+        int[] frequency = new int[n + 1];
+        int[] rtn = new int[2];
+        int i;
+        int max = 0;
+        int freq;
+        for (i = 0; i < factors.size(); i = i + 1) {
+            frequency[factors.get(i)] += 1;
+            freq = frequency[factors.get(i)];
+            if (freq > max) {
+                max = freq;
+                rtn[0] = factors.get(i);
+                rtn[1] = max;
+            }
+        }
+        return rtn;
+    }
+
 }
