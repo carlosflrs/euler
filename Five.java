@@ -1,7 +1,6 @@
 import utils.Primes;
 
 import java.util.ArrayList;
-import java.util.Hashtable;
 
 /** Finds the smallest positive number that is evenly divisible by all
  * of the numbers from 1 to ARGS[0].
@@ -28,7 +27,7 @@ public class Five {
     private static int[] highestFrequencies(int n) {
         int[] frequencies = new int[n + 1];
         int[] prime = new int[2];
-        int i = 1;
+        int i;
         for (i = 1; i <= n; i = i + 1) {
             prime = highestFactor(i);
             if (frequencies[prime[0]] < prime[1]) {
