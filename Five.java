@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /** Finds the smallest positive number that is evenly divisible by all
  * of the numbers from 1 to ARGS[0].
- * @author Carlso A. Flores-Arellano.
+ * @author Carlos A. Flores-Arellano.
  * */
 public class Five {
 
